@@ -6,6 +6,13 @@ will wait. When there are no items, the consumer will wait. We use semaphores to
 the producer and the consumer. Mutual exclusion should be considered. We use threads in
 the producer program and consumer program. Shared memory is used for the “table”
 
+## Program Description:
+In this code, the producer generates random numbers and puts them in a shared buffer (our counter), while the consumer reads and sums these numbers. They use semaphores  to coordinate their actions. There are three key signals: one to track empty spots in the buffer, one for filled spots, and a "lock" to ensure only one process touches the buffer at a time.
+
+Both programs run in continuous loops, with the producer filling the buffer with random numbers and the consumer reading and summing them up. They take brief breaks (sleep for 1 second) between iterations to prevent hogging system resources.
+
+The run.sh file compiles both programs and runs them simultaneously.
+
 ## Must Install for the program to run correctly:
 ```bash
 sudo apt update && sudo apt install g++
