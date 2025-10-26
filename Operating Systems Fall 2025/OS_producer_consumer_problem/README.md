@@ -11,6 +11,8 @@ In this code, the producer generates random numbers and puts them in a shared bu
 
 Both programs run in continuous loops, with the producer filling the buffer with random numbers and the consumer reading and summing them up. They take brief breaks (sleep for 1 second) between iterations to prevent hogging system resources.
 
+Mutual exclusion in this program important; only one process can have the key at a time. This is crucial because without it, you could get into situations where both processes try to access the buffer at the same time.
+
 The run.sh file compiles both programs and runs them simultaneously.
 
 ## Must Install for the program to run correctly:
