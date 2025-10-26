@@ -1,0 +1,12 @@
+mkeffer4@gamer:~/OS2025/OS_producer_consumer_problem$ ./run.sh run; sleep 5; ./run.sh clean
+[*] Starting Compilation of Producer and Consumer...
+[*] Executing Producer and Consumer...
+[*] Produced: 42
+[*] Consumed: 42
+[*] Produced: 173
+[*] Produced: 215       
+[*] Consumed: 173
+[*] Consumed: 215
+[*] Produced: 88
+[*] Consumed: 88
+[*] Produced: 156
