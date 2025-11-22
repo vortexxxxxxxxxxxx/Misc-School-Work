@@ -1,11 +1,9 @@
-# Bankers Algorithm
-
-## Problem: Banker's Algorithm for deadlock avoidance
+## Banker's Algorithm for deadlock avoidance
 Considering a system with five processes P\_0 through P\_4 and three resources of type A, B, C.
 Resource type A has 10 instances, B has 5 instances and type C has 7 instances. Suppose at
 time t0 following snapshot of the system has been taken:
 
-![snapshot at time T_0](t_0_snapshot.png)
+![snapshot at time T_0](screenshot.png)
 
 ### Question
 Implement the Banker's algorithm to answer the following question
