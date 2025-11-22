@@ -1,4 +1,4 @@
-## Banker's Algorithm for deadlock avoidance
+## Banker's Algorithm for Deadlock Avoidance
 
 Banker's Algorithm is a resource allocation and deadlock-avoidance algorithm used in operating systems. It decides whether granting a resource request keeps the system in a safe state. A safe state means there exists some ordering of processes (a safe sequence) where each process can obtain the resources it needs, finish, and release resources so all processes can complete without deadlock.
 
