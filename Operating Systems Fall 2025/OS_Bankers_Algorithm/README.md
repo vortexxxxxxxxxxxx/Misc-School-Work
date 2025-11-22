@@ -33,7 +33,7 @@ sudo apt update && sudo apt install g++
 
 ### Build instructions
 ```bash
-git clone 
+git clone https://github.com/vortexxxxxxxxxxxx/Misc-School-Work/tree/main/Operating%20Systems%20Fall%202025/OS_Bankers_Algorithm
 cd OS_Bankers_Algorithm
 chmod +x run.sh
 ./run.sh
