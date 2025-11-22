@@ -33,8 +33,8 @@ sudo apt update && sudo apt install g++
 
 ### Build instructions
 ```bash
-git clone https://github.com/EndermanSUPREME/Bankers_Algorithm.git
-cd Bankers_Algorithm
+git clone 
+cd OS_Bankers_Algorithm
 chmod +x run.sh
 ./run.sh
 ```
