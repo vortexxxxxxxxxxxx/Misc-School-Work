@@ -11,12 +11,12 @@ time t0 following snapshot of the system has been taken:
 ![snapshot at time T_0](screenshot.png)
 
 ### Question
-Implement the Banker's algorithm to answer the following question
-- Is the system in a safe-state? If *yes*, then what is the safe sequence?
+Implement the Banker's algorithm to answer the following question: Is the system in a safe-state? If Yes, then what is the safe sequence?
 
-### Solution
-The Environment of the system is we have `5` processes and `3` resource types.<br>
+### Answer
+The Environment of the system is we have 5 processes and 3 resource types.<br>
 After running Bankers Algorithm:
+
 ```bash
 ./bankers system.txt
 ```
