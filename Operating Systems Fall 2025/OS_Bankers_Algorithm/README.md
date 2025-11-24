@@ -99,7 +99,7 @@ Contents from [data3.txt](data3.txt)
 
 ## Output of Running Program
 
-```bash
+```
 mkeffer4@gamer:~/OS2025/OS_Bankers_Algorithm$ ./run.sh
 Usage: $0 [compile|run_all|help]
 
