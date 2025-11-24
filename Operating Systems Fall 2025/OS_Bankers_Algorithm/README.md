@@ -142,41 +142,42 @@ mkeffer4@gamer:~/OS2025/OS_Bankers_Algorithm$
 
 
 ## Deep Dive into Banker's Algorithm
-According to [geeksforgeeks](https://www.geeksforgeeks.org/operating-systems/bankers-algorithm-in-operating-system-2/):
 
-Banker's Algorithm is a resource allocation and deadlock avoidance algorithm used in operating systems.
-It ensures that a system remains in a safe state by carefully allocating resources to processes while
-avoiding unsafe states that could lead to deadlocks.
+The Banker’s Algorithm is a deadlock avoidance algorithm that ensures a system never enters a deadlock state. It simulates resource allocation requests and determines whether granting the request would leave the system in a safe state (i.e., a state where all processes can complete execution).
 
-- The Banker's Algorithm is a smart way for computer systems to manage how programs use resources, like memory or CPU time.
-- It helps prevent situations where programs get stuck and can not finish their tasks. This condition is known as deadlock.
-- By keeping track of what resources each program needs and what's available, the banker algorithm makes sure that programs only get what they need in a safe order.
+The algorithm works based on three matrices:
+-Maximum: The maximum number of resources each process might need.
+-Allocated: The number of resources currently allocated to each process.
+-Available: The number of free resources currently available.
+
+The algorithm then checks whether granting a resource request would result in a system state where all processes can eventually finish without deadlocks.
+
+Steps of the Banker’s Algorithm
+Check if the Request is Within the Maximum Need:
+-The requested resources must not exceed the maximum declared by the process.
+Check if Resources are Available:
+-If the requested resources exceed the number of currently available resources, the process must wait.
+Pretend to Allocate Resources Temporarily:
+-Simulate granting the request and update the Available, Allocated, and Need matrices.
+Check for Safe State:
+-Determine if the new resource allocation leads to a safe state where all processes can finish execution. If not, roll back the temporary allocation.
+
+If the system remains in a safe state after granting the request, the resources are allocated; otherwise, the request is denied.
+
+Some Key concepts include the "Safe" state and "Unsafe" state.
+Safe State: There exists at least one sequence of processes such that each process can obtain the needed resources, complete its execution, release its resources, and thus allow other processes to eventually complete without entering a deadlock.
+
+Unsafe State: Even though the system can still allocate resources to some processes, there is no guarantee that all processes can finish without potentially causing a deadlock.
 
 
-#### Components of the Banker's Algorithm
-The following Data structures are used to implement the Banker's Algorithm:
-Let `n` be the number of processes in the system and `m` be the number of resource types.
+Bankers Algorithm has both pros and cons.
+Pros:
+-Prevents deadlocks by simulating and checking safe states before granting requests.
+-Efficient for small to medium-scale systems with predictable resource requirements.
+-Simple to implement in systems where the maximum resource needs are known in advance.
+Cons:
+-The algorithm requires processes to declare their maximum resource needs in advance, which may not be possible in all applications.
+-It may lead to unnecessary denial of requests in systems with fluctuating resource demands.
+-The algorithm can become inefficient for large systems with many concurrent processes and resource types.
+-It assumes that the number of available resources remains static, which may not reflect real-world conditions.
 
-1. Available
-- It is a 1-D array of size `m` indicating the number of available resources of each type.
-- Available[ j ] = k means there are `k` instances of resource type R\_j
-
-2. Max
-- It is a 2-D array of size `n*m` that defines the maximum demand of each process in a system.
-- Max[ i, j ] = k means process P\_i may request at most `k` instances of resource type R\_j.
-
-3. Allocation
-- It is a 2-D array of size `n*m` that defines the number of resources of each type currently allocated to each process.
-- Allocation[ i, j ] = k means process P\_i is currently allocated `k` instances of resource type R\_j
-
-4. Need
-- It is a 2-D array of size `n*m` that indicates the remaining resource need of each process.
-- Need [ i, j ] = k means process P\_i currently needs `k` instances of resource type R\_j
-- Need [ i, j ] = Max [ i, j ] – Allocation [ i, j ]
-
-Allocation specifies the resources currently allocated to process P\_i and Need specifies the additional resources that process P\_i may still request to complete its task.
-
-#### Key Concepts in Banker's Algorithm
-`Safe` State: There exists at least one sequence of processes such that each process can obtain the needed resources, complete its execution, release its resources, and thus allow other processes to eventually complete without entering a deadlock.
-
-`Unsafe` State: Even though the system can still allocate resources to some processes, there is no guarantee that all processes can finish without potentially causing a deadlock.
