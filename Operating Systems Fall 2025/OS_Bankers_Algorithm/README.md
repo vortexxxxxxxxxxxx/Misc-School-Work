@@ -145,39 +145,39 @@ mkeffer4@gamer:~/OS2025/OS_Bankers_Algorithm$
 
 The Banker’s Algorithm is a deadlock avoidance algorithm that ensures a system never enters a deadlock state. It simulates resource allocation requests and determines whether granting the request would leave the system in a safe state (i.e., a state where all processes can complete execution).
 
-The algorithm works based on three matrices:
--Maximum: The maximum number of resources each process might need.
--Allocated: The number of resources currently allocated to each process.
--Available: The number of free resources currently available.
+The algorithm works based on three matrices:<br>
+-Maximum: The maximum number of resources each process might need.<br>
+-Allocated: The number of resources currently allocated to each process.<br>
+-Available: The number of free resources currently available.<br>
 
 The algorithm then checks whether granting a resource request would result in a system state where all processes can eventually finish without deadlocks.
 
-Steps of the Banker’s Algorithm
+Steps of the Banker’s Algorithm:<br>
 Check if the Request is Within the Maximum Need:<br>
--The requested resources must not exceed the maximum declared by the process.
+-The requested resources must not exceed the maximum declared by the process.<br>
 Check if Resources are Available:<br>
--If the requested resources exceed the number of currently available resources, the process must wait.
+-If the requested resources exceed the number of currently available resources, the process must wait.<br>
 Pretend to Allocate Resources Temporarily:<br>
--Simulate granting the request and update the Available, Allocated, and Need matrices.
+-Simulate granting the request and update the Available, Allocated, and Need matrices.<br>
 Check for Safe State:<br>
--Determine if the new resource allocation leads to a safe state where all processes can finish execution. If not, roll back the temporary allocation.
+-Determine if the new resource allocation leads to a safe state where all processes can finish execution. If not, roll back the temporary allocation.<br>
 
 If the system remains in a safe state after granting the request, the resources are allocated; otherwise, the request is denied.
 
-Some Key concepts include the "Safe" state and "Unsafe" state.
-Safe State: There exists at least one sequence of processes such that each process can obtain the needed resources, complete its execution, release its resources, and thus allow other processes to eventually complete without entering a deadlock.
+Some Key concepts include the "Safe" state and "Unsafe" state.<br>
+Safe State: There exists at least one sequence of processes such that each process can obtain the needed resources, complete its execution, release its resources, and thus allow other processes to eventually complete without entering a deadlock.<br>
 
-Unsafe State: Even though the system can still allocate resources to some processes, there is no guarantee that all processes can finish without potentially causing a deadlock.
+Unsafe State: Even though the system can still allocate resources to some processes, there is no guarantee that all processes can finish without potentially causing a deadlock.<br>
 
 
 Bankers Algorithm has both pros and cons.
-Pros:
--Prevents deadlocks by simulating and checking safe states before granting requests.
--Efficient for small to medium-scale systems with predictable resource requirements.
--Simple to implement in systems where the maximum resource needs are known in advance.
-Cons:
--The algorithm requires processes to declare their maximum resource needs in advance, which may not be possible in all applications.
--It may lead to unnecessary denial of requests in systems with fluctuating resource demands.
--The algorithm can become inefficient for large systems with many concurrent processes and resource types.
--It assumes that the number of available resources remains static, which may not reflect real-world conditions.
+Pros:<br>
+-Prevents deadlocks by simulating and checking safe states before granting requests.<br>
+-Efficient for small to medium-scale systems with predictable resource requirements.<br>
+-Simple to implement in systems where the maximum resource needs are known in advance.<br>
+Cons:<br>
+-The algorithm requires processes to declare their maximum resource needs in advance, which may not be possible in all applications.<br>
+-It may lead to unnecessary denial of requests in systems with fluctuating resource demands.<br>
+-The algorithm can become inefficient for large systems with many concurrent processes and resource types.<br>
+-It assumes that the number of available resources remains static, which may not reflect real-world conditions.<br>
 
