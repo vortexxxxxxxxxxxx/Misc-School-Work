@@ -42,15 +42,15 @@ chmod +x run.sh
 *More about run.sh*:<br>
 `./run.sh` is a bash-script used to automate program compiling and execution of the binary `bankers`.
 ```
-Usage: ./run.sh [compile|run_all|help]
+Usage: $0 [compile|run_all|help]
 
-Options:
-  help          Show this page
-  compile       Compile Bankers
-  run_all       Run Bankers against data1-3.txt files
+Commands:
+  help          Display this help text
+  compile       Build the Bankers binary
+  run_all       Build and run Bankers with data1-3.txt
 
-Examples:
-  ./bankers data1.txt
+ Example:
+   ./bankers data1.txt
 ```
 
 ### Input Files
@@ -98,6 +98,48 @@ Contents from [data3.txt](data3.txt)
 ```
 
 ## Output of Running Program
+
+```bash
+mkeffer4@gamer:~/OS2025/OS_Bankers_Algorithm$ ./run.sh
+Usage: $0 [compile|run_all|help]
+
+Commands:
+  help          Display this help text
+  compile       Build the Bankers binary
+  run_all       Build and run Bankers with data1-3.txt
+
+ Example:
+   ./bankers data1.txt
+mkeffer4@gamer:~/OS2025/OS_Bankers_Algorithm$ ./run.sh run_all
+-Compiling Bankers program...
+-Running Bankers with data1-3.txt files...
+============================================
+-Reading ./data1.txt
+-Finished reading ./data1.txt
+-Running Environment
+      Max Processes -> 5
+      Max Resources -> 3
+-System is in a Safe state.
+      safe-sequence: P1 -> P3 -> P4 -> P0 -> P2
+
+-Reading ./data2.txt
+-Finished reading ./data2.txt
+-Running Environment
+      Max Processes -> 5
+      Max Resources -> 3
+-System is in an Unsafe state!
+
+-Reading ./data3.txt
+-Finished reading ./data3.txt
+-Running Environment
+      Max Processes -> 5
+      Max Resources -> 3
+-System is in a Safe state.
+      safe-sequence: P4 -> P1 -> P2 -> P3 -> P0
+
+mkeffer4@gamer:~/OS2025/OS_Bankers_Algorithm$
+```
+
 
 ## Deep Dive into Banker's Algorithm
 According to [geeksforgeeks](https://www.geeksforgeeks.org/operating-systems/bankers-algorithm-in-operating-system-2/):
