@@ -1,4 +1,4 @@
-## Banker's Algorithm for Deadlock Avoidance
+## Banker's Algorithm for Deadlock Avoidance:
 
 Banker's Algorithm is a resource allocation and deadlock-avoidance algorithm used in operating systems. It decides whether granting a resource request keeps the system in a safe state. A safe state means there exists some ordering of processes (a safe sequence) where each process can obtain the resources it needs, finish, and release resources so all processes can complete without deadlock.
 
@@ -10,10 +10,10 @@ time t0 following snapshot of the system has been taken:
 
 ![snapshot at time T_0](screenshot.png)
 
-### Question
+### Question:
 Implement the Banker's algorithm to answer the following question: Is the system in a safe-state? If Yes, then what is the safe sequence?
 
-### Answer
+### Answer:
 The Environment of the system is we have 5 processes and 3 resource types.<br>
 After running Bankers Algorithm:
 
@@ -24,8 +24,8 @@ After running Bankers Algorithm:
 Is the system in a safe-state? `YES`.<br>
 If yes, then what is the safe sequence? `P3 -> P4 -> P1 -> P2 -> P0`.
 
-## Build
-### Dependencies:
+## Build:
+### Dependencies
 Install the following dependencies before attempting to build:
 ```bash
 sudo apt update && sudo apt install g++
@@ -73,7 +73,7 @@ Contents from [data3.txt](data3.txt)
 -The next 5 rows represent the Maximum Demand Matrix.
 -The last row represents the Available Resources.
 
-## Expected Outputs
+## Expected Outputs:
 #### Output During Safe State
 ```
 ./bankers data1.txt
@@ -97,7 +97,7 @@ Contents from [data3.txt](data3.txt)
 -System is in an Unsafe state.
 ```
 
-## Output of Running Program
+## Output of Running Program:
 
 ```
 mkeffer4@gamer:~/OS2025/OS_Bankers_Algorithm$ ./run.sh
@@ -141,7 +141,7 @@ mkeffer4@gamer:~/OS2025/OS_Bankers_Algorithm$
 ```
 
 
-## Deep Dive into Banker's Algorithm
+## Deep Dive into Banker's Algorithm:
 
 The Banker’s Algorithm is a deadlock avoidance algorithm that ensures a system never enters a deadlock state. It simulates resource allocation requests and determines whether granting the request would leave the system in a safe state (i.e., a state where all processes can complete execution).
 
