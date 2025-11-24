@@ -153,13 +153,13 @@ The algorithm works based on three matrices:
 The algorithm then checks whether granting a resource request would result in a system state where all processes can eventually finish without deadlocks.
 
 Steps of the Banker’s Algorithm
-Check if the Request is Within the Maximum Need:
+Check if the Request is Within the Maximum Need:<br>
 -The requested resources must not exceed the maximum declared by the process.
-Check if Resources are Available:
+Check if Resources are Available:<br>
 -If the requested resources exceed the number of currently available resources, the process must wait.
-Pretend to Allocate Resources Temporarily:
+Pretend to Allocate Resources Temporarily:<br>
 -Simulate granting the request and update the Available, Allocated, and Need matrices.
-Check for Safe State:
+Check for Safe State:<br>
 -Determine if the new resource allocation leads to a safe state where all processes can finish execution. If not, roll back the temporary allocation.
 
 If the system remains in a safe state after granting the request, the resources are allocated; otherwise, the request is denied.
