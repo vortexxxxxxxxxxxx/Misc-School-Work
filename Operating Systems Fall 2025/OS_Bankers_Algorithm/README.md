@@ -4,7 +4,7 @@ Banker's Algorithm is a resource allocation and deadlock-avoidance algorithm use
 
 ## Problem:
 
-Considering a system with five processes P\_0 through P\_4 and three resources of type A, B, C.
+Considering a system with five processes P0 through P4 and three resources of type A, B, C.
 Resource type A has 10 instances, B has 5 instances and type C has 7 instances. Suppose at
 time t0 following snapshot of the system has been taken:
 
@@ -74,31 +74,30 @@ Contents from [data3.txt](data3.txt)
 - The last row represents the Available Resources.
 
 ## Expected Outputs
-#### Output during Safe State
+#### Output During Safe State
 ```
 ./bankers data1.txt
-[*] Reading ./data1.txt
-[+] Finished reading ./data1.txt
-[*] Running Environment
- |___ Max Processes -> 5
- |___ Max Resources -> 3
-[+] System is in a Safe state.
- |__ safe-sequence: P1 -> P3 -> P4 -> P0 -> P2
+-Reading ./data1.txt
+-Finished reading ./data1.txt
+-Running Environment
+      Max Processes -> 5
+      Max Resources -> 3
+-System is in a Safe state.
+      safe-sequence: P1 -> P3 -> P4 -> P0 -> P2
 ```
 
-#### Output during Unsafe State
+#### Output During Unsafe State
 ```
 ./bankers data2.txt
-[*] Reading data2.txt
-[+] Finished reading data2.txt
-[*] Running Environment
- |___ Max Processes -> 5
- |___ Max Resources -> 3
-[-] System is in an Unsafe state.
+-Reading data2.txt
+-Finished reading data2.txt
+-Running Environment
+      Max Processes -> 5
+      Max Resources -> 3
+-System is in an Unsafe state.
 ```
 
-## Proof of Concept
-![screenshot of example execution](demo.png)
+## Output of Running Program
 
 ## Deep Dive into Banker's Algorithm
 According to [geeksforgeeks](https://www.geeksforgeeks.org/operating-systems/bankers-algorithm-in-operating-system-2/):
