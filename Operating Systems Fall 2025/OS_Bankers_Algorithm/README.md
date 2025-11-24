@@ -22,7 +22,7 @@ After running Bankers Algorithm:
 ```
 
 Is the system in a safe-state? `YES`.<br>
-If *yes*, then what is the safe sequence? `P3 -> P4 -> P1 -> P2 -> P0`.
+If yes, then what is the safe sequence? `P3 -> P4 -> P1 -> P2 -> P0`.
 
 ## Build
 ### Dependencies:
@@ -39,7 +39,7 @@ chmod +x run.sh
 ./run.sh
 ```
 
-*More about run.sh*:<br>
+run.sh Info:<br>
 `./run.sh` is a bash-script used to automate program compiling and execution of the binary `bankers`.
 ```
 Usage: $0 [compile|run_all|help]
@@ -69,9 +69,9 @@ Contents from [data3.txt](data3.txt)
 3 3 2
 ```
 
-- The first 5 rows represent the Allocation Matrix.
-- The next 5 rows represent the Maximum Demand Matrix.
-- The last row represents the Available Resources.
+-The first 5 rows represent the Allocation Matrix.
+-The next 5 rows represent the Maximum Demand Matrix.
+-The last row represents the Available Resources.
 
 ## Expected Outputs
 #### Output During Safe State
