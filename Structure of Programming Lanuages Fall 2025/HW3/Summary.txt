@@ -1,0 +1,9 @@
+Runner now supports a `watch=<identifier>` command-line option. When this option is used, the watched name is passed into the evaluator so that any assignment to that identifier is reported. Runner also starts a REPL when no file is provided (or when only the watch option is given). In the REPL you can try small snippets, see their results immediately, use `exit` or `quit` to leave, and return an exit code when the program evaluates an `exit` statement.
+
+Evaluator accepts the optional `watched_identifier` and prints a message whenever an assignment targets that identifier. The message includes the variable name, the source location if available (line and column or a position from the AST), and the new value, for example: *** WATCH: 'x' changed at L12:C5 to 7 ***. The evaluator propagates `exit` status up through nested evaluations, including across imports, so the runner can exit with the intended code in both script and REPL modes.
+
+For clearer diagnostics, `ast_to_string()` covers many node types so that messages (such as failed assertions) can show readable expressions. Assertions support an optional explanation; when the assertion fails, that explanation is evaluated and appended to the error message, which makes the failure easier to understand.
+
+Why these changes help
+
+Watching assignments makes it easy to see exactly when a variable changes and where the change happened. The REPL allows quick, incremental testing without creating files, which is useful when tracking down a problem. Reliable exit handling ensures that programs end with the right code, and more readable messages from assertions and AST formatting make errors easier to diagnose.
